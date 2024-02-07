@@ -2,12 +2,18 @@
 <div>
 	<table>
 		<thead>
-			<tr>Protocols</tr>
+			<tr>Name</tr>
+			<tr>Description</tr>
 		</thead>
 		<tbody>
 			@foreach (var protocol in Protocols)
 			{
-				<tr>protocol.Name</tr>
+				<tr>
+					<td>
+						@protocol.Name
+					</td>
+					<td>@protocol.Description</td>
+				</tr>
 			}
 		</tbody>
 
