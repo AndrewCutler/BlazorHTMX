@@ -1,6 +1,4 @@
 ﻿using BlazorHTMX.Api.Models;
-using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.AspNetCore.Mvc;
 
 namespace BlazorHTMX.Api.Handlers
 {
@@ -11,21 +9,20 @@ namespace BlazorHTMX.Api.Handlers
             return true;
         }
 
-        public async Task<IResult> Submit(HttpContext context)
-        {
-            var form = await context.Request.ReadFormAsync();
-            var name = form["name"];
-            Console.WriteLine(context);
-            if (!IsValid())
-            {
-                return new RazorComponentResult<_CreateProtocolForm>()
-                {
-                    StatusCode = 400,
-                };
-            }
+		public IResult Submit(CreateProtocolFormModel form)
+		{
+			if (!IsValid())
+			{
+				return Results.BadRequest($"Invalid {nameof(CreateProtocolFormModel)}.");
+			}
 
-            // todo: return html result of created protocol
-            return new RazorComponentResult<_CreateProtocolForm>();
-        }
-    }
+			return Component<_Protocol, ProtocolParameters>.Create(new ProtocolParameters
+			{
+				ProtocolModel = new ProtocolModel
+				{
+					Name = form.Name,
+				},
+			});
+		}
+	}
 }

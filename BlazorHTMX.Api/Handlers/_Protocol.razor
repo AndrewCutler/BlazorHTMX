@@ -1,0 +1,9 @@
+﻿@using BlazorHTMX.Api.Models
+
+<h3>Protocol</h3>
+<div>@ProtocolModel?.Name</div>
+
+@code {
+	[Parameter]
+	public ProtocolModel ProtocolModel { get; set; }
+}
