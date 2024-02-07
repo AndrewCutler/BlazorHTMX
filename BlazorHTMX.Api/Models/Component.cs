@@ -6,7 +6,7 @@ namespace BlazorHTMX.Api.Models
 	{
 		public static RazorComponentResult Create(TParameters? parameters)
 		{
-			if (parameters is null) return new RazorComponentResult(typeof(TRazor);
+			if (parameters is null) return new RazorComponentResult(typeof(TRazor));
 
 			return new RazorComponentResult(typeof(TRazor), parameters);
 		}
