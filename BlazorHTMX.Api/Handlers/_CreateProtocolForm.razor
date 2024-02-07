@@ -1,6 +1,10 @@
-﻿<h3>_CreateProtocolForm</h3>
-<form>
+﻿@using Microsoft.AspNetCore.Components.Forms
 
+<h3>CreateProtocolForm</h3>
+<form hx-post="/form">
+    <input type="text" placeholder="Name" name="name"/>
+    <button type="submit">Submit</button>
+    <AntiforgeryToken />
 </form>
 
 @code {

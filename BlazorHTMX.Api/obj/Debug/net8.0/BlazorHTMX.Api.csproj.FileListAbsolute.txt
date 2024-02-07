@@ -28,3 +28,4 @@ C:\Users\spyro\Apps\BlazorHTMX\BlazorHTMX.Api\obj\Debug\net8.0\refint\BlazorHTMX
 C:\Users\spyro\Apps\BlazorHTMX\BlazorHTMX.Api\obj\Debug\net8.0\BlazorHTMX.Api.pdb
 C:\Users\spyro\Apps\BlazorHTMX\BlazorHTMX.Api\obj\Debug\net8.0\BlazorHTMX.Api.genruntimeconfig.cache
 C:\Users\spyro\Apps\BlazorHTMX\BlazorHTMX.Api\obj\Debug\net8.0\ref\BlazorHTMX.Api.dll
+C:\Users\spyro\Apps\BlazorHTMX\BlazorHTMX.Api\obj\Debug\net8.0\BlazorHTMX.Api.sourcelink.json
