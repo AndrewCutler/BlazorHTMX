@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
+﻿using BlazorHTMX.Api.Models;
 
 namespace BlazorHTMX.Api.Handlers
 {
@@ -6,10 +6,7 @@ namespace BlazorHTMX.Api.Handlers
     {
         public IResult Render()
         {
-            return new RazorComponentResult<_Index>(new
-            {
-                UserName = "test",
-            });
+			return Component<_Index>.Create();
         }
     }
 }

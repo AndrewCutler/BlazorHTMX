@@ -2,6 +2,14 @@
 
 namespace BlazorHTMX.Api.Models
 {
+	public class Component<TRazor>
+	{
+		public static RazorComponentResult Create()
+		{
+			return new RazorComponentResult(typeof(TRazor));
+		}
+	}
+
 	public class Component<TRazor, TParameters>
 	{
 		public static RazorComponentResult Create(TParameters? parameters)

@@ -15,6 +15,8 @@ namespace BlazorHTMX.Api.Routes
 				return new CreateProtocolFormHandler().Submit(form);
 			});
 
+			app.MapGet("/protocols", new ProtocolTableHandler().Render);
+
 			return app;
         }
     }
