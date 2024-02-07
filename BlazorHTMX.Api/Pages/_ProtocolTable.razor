@@ -1,0 +1,26 @@
+﻿@using BlazorHTMX.Api.Models
+<div>
+	<table>
+		<thead>
+			<tr>Protocols</tr>
+		</thead>
+		<tbody>
+			@foreach (var protocol in Protocols)
+			{
+				<tr>protocol.Name</tr>
+			}
+		</tbody>
+
+	</table>
+</div>
+
+@code {
+	[Parameter]
+	public IEnumerable<ProtocolModel> Protocols { get; set; } = Enumerable.Empty<ProtocolModel>();
+	[Parameter]
+	public int Skip { get; set; }
+	[Parameter]
+	public int Take { get; set; }
+	[Parameter]
+	public int Total { get; set; }
+}
