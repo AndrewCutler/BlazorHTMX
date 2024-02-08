@@ -15,7 +15,10 @@ namespace BlazorHTMX.Api.Routes
 				return new CreateProtocolFormHandler().Submit(form);
 			});
 
-			app.MapGet("/protocols", new ProtocolTableHandler().Render);
+			app.MapGet("/protocols", ([AsParameters] PaginationRequest<ProtocolModel> pagination) =>
+			{
+				return new ProtocolTableHandler().Render(pagination);
+			});
 
 			return app;
         }

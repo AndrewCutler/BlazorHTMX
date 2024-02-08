@@ -1,5 +1,6 @@
 ﻿@using BlazorHTMX.Api.Models
 <div>
+	<h4>test</h4>
 	<table>
 		<thead>
 			<tr>Name</tr>
@@ -16,17 +17,21 @@
 				</tr>
 			}
 		</tbody>
-
 	</table>
+	<div>
+		<span hx-target="#protocols-table" hx-get="/protocols?page=@(Page-1)&pageSize=@PageSize">Previous</span>
+		<span style="width:10px" />
+		<span hx-target="#protocols-table" hx-get="/protocols?page=@(Page+1)&pageSize=@PageSize">Next</span>
+	</div>
 </div>
 
 @code {
 	[Parameter]
 	public IEnumerable<ProtocolModel> Protocols { get; set; } = Enumerable.Empty<ProtocolModel>();
 	[Parameter]
-	public int Skip { get; set; }
+	public int Page { get; set; }
 	[Parameter]
-	public int Take { get; set; }
+	public int PageSize { get; set; }
 	[Parameter]
 	public int Total { get; set; }
 }

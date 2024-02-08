@@ -7,6 +7,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Blazor + HTMX</title>
+	<link rel="stylesheet" href="site.css">
 	<script src="https://unpkg.com/htmx.org@1.9.10"
 		integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
 		crossorigin="anonymous"></script>
@@ -15,7 +16,7 @@
 <body>
 	<_CreateProtocolForm />
 	<div style="margin-top: 12px;">
-		<button hx-get="/protocols" hx-target="#protocols-table">Get protocols</button>
+		<button hx-get="/protocols?page=1&pageSize=10" hx-target="#protocols-table">Get protocols</button>
 		<div id="protocols-table"></div>
 	</div>
 </body>
